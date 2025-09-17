@@ -1,0 +1,508 @@
+{
+  "monorepo_mapping_plan": {
+    "metadata": {
+      "created_date": "2024-09-17",
+      "total_repositories": 70,
+      "turborepo_structure": {
+        "apps": "Standalone applications, services, and end-user facing tools",
+        "packages": "Shared libraries, utilities, and reusable components"
+      }
+    },
+    "ai_agent_tools": {
+      "category_description": "AI workflow automation, agent orchestration, and coding tools",
+      "recommended_subset": ["activepieces", "claude-code", "autogen", "langgraph", "firecrawl-mcp-server"],
+      "repositories": [
+        {
+          "repo_name": "activepieces",
+          "destination_path": "apps/activepieces",
+          "migration_method": "git_subtree",
+          "language": "TypeScript",
+          "purpose": "AI workflow automation platform with ~400 MCP servers",
+          "priority": "high",
+          "notes": "Core orchestration platform - keep as primary AI workflow tool"
+        },
+        {
+          "repo_name": "claude-code",
+          "destination_path": "apps/claude-code",
+          "migration_method": "git_subtree",
+          "language": "TypeScript", 
+          "purpose": "Agentic coding tool in terminal",
+          "priority": "high",
+          "notes": "Primary coding assistant tool"
+        },
+        {
+          "repo_name": "claude-flow",
+          "destination_path": "packages/claude-flow",
+          "migration_method": "git_subtree",
+          "language": "TypeScript",
+          "purpose": "Orchestration framework for Claude agents",
+          "priority": "medium",
+          "notes": "Shared orchestration library"
+        },
+        {
+          "repo_name": "claude-code-by-agents",
+          "destination_path": "apps/claude-code-by-agents",
+          "migration_method": "archive",
+          "language": "TypeScript",
+          "purpose": "Multi-agent Claude orchestration desktop app",
+          "priority": "low",
+          "notes": "Archive unless testing new agent frameworks"
+        },
+        {
+          "repo_name": "claude-code-router",
+          "destination_path": "packages/claude-code-router",
+          "migration_method": "archive",
+          "language": "TypeScript",
+          "purpose": "Middleware for Claude Code",
+          "priority": "low",
+          "notes": "Archive unless testing new agent frameworks"
+        },
+        {
+          "repo_name": "agentops",
+          "destination_path": "packages/agentops",
+          "migration_method": "git_subtree",
+          "language": "Python",
+          "purpose": "Agent monitoring, cost tracking, benchmarking",
+          "priority": "medium",
+          "notes": "Useful monitoring library for agent operations"
+        },
+        {
+          "repo_name": "roo-code",
+          "destination_path": "apps/roo-code",
+          "migration_method": "archive",
+          "language": "TypeScript",
+          "purpose": "Full dev team of AI agents inside IDE",
+          "priority": "low",
+          "notes": "Archive unless testing new agent frameworks"
+        },
+        {
+          "repo_name": "crewai",
+          "destination_path": "packages/crewai",
+          "migration_method": "archive",
+          "language": "Python",
+          "purpose": "Multi-agent orchestration framework",
+          "priority": "low",
+          "notes": "Archive unless testing new agent frameworks"
+        },
+        {
+          "repo_name": "autogen",
+          "destination_path": "packages/autogen",
+          "migration_method": "git_subtree",
+          "language": "Python",
+          "purpose": "Multi-agent conversation framework",
+          "priority": "high",
+          "notes": "Keep as core orchestration framework"
+        },
+        {
+          "repo_name": "langgraph",
+          "destination_path": "packages/langgraph",
+          "migration_method": "git_subtree",
+          "language": "Python",
+          "purpose": "Stateful agent orchestration with LangChain",
+          "priority": "high",
+          "notes": "Keep as core orchestration framework"
+        },
+        {
+          "repo_name": "langgraphjs",
+          "destination_path": "packages/langgraphjs",
+          "migration_method": "archive",
+          "language": "TypeScript",
+          "purpose": "JavaScript version of LangGraph",
+          "priority": "low",
+          "notes": "Archive unless testing new agent frameworks"
+        }
+      ]
+    },
+    "web_crawling_data": {
+      "category_description": "Web crawling, scraping, and data extraction tools",
+      "consolidation_target": "flashfusion-data",
+      "repositories": [
+        {
+          "repo_name": "firecrawl",
+          "destination_path": "packages/flashfusion-data-core",
+          "migration_method": "git_subtree",
+          "language": "TypeScript",
+          "purpose": "Convert websites into structured AI-ready data",
+          "priority": "high",
+          "notes": "Core data extraction library - consolidate into flashfusion-data package"
+        },
+        {
+          "repo_name": "firecrawl-app-examples",
+          "destination_path": "apps/flashfusion-data-examples",
+          "migration_method": "git_subtree",
+          "language": "Jupyter",
+          "purpose": "Example apps using Firecrawl",
+          "priority": "medium",
+          "notes": "Consolidate examples into single app"
+        },
+        {
+          "repo_name": "firecrawl-docs",
+          "destination_path": "apps/flashfusion-data-docs",
+          "migration_method": "git_subtree",
+          "language": "MDX",
+          "purpose": "Documentation for data extraction tools",
+          "priority": "medium",
+          "notes": "Consolidate documentation"
+        },
+        {
+          "repo_name": "firecrawl-mcp-server",
+          "destination_path": "packages/flashfusion-data-mcp",
+          "migration_method": "git_subtree",
+          "language": "JavaScript",
+          "purpose": "MCP integration for data extraction",
+          "priority": "high",
+          "notes": "Keep as core MCP integration"
+        },
+        {
+          "repo_name": "enhanced-firecrawl-scraper",
+          "destination_path": "packages/flashfusion-data-scraper",
+          "migration_method": "git_subtree",
+          "language": "HTML/JS",
+          "purpose": "Extended scraper functionality",
+          "priority": "medium",
+          "notes": "Consolidate into flashfusion-data package"
+        },
+        {
+          "repo_name": "open-lovable",
+          "destination_path": "apps/open-lovable",
+          "migration_method": "git_subtree",
+          "language": "TypeScript",
+          "purpose": "Clone websites into React apps",
+          "priority": "medium",
+          "notes": "Useful for website replication"
+        }
+      ]
+    },
+    "monitoring_infrastructure": {
+      "category_description": "Monitoring, observability, and infrastructure tools",
+      "recommended_suite": ["supabase", "firebase-tools", "uptime-kuma", "oneuptime"],
+      "repositories": [
+        {
+          "repo_name": "checkmate",
+          "destination_path": "apps/checkmate",
+          "migration_method": "git_subtree",
+          "language": "JavaScript",
+          "purpose": "Server monitoring, uptime, visualization",
+          "priority": "medium",
+          "notes": "Integrate with FlashFusion infra"
+        },
+        {
+          "repo_name": "uptime-kuma",
+          "destination_path": "apps/uptime-kuma",
+          "migration_method": "git_subtree",
+          "language": "JavaScript",
+          "purpose": "Uptime monitoring",
+          "priority": "high",
+          "notes": "Keep as core observability suite"
+        },
+        {
+          "repo_name": "oneuptime",
+          "destination_path": "apps/oneuptime",
+          "migration_method": "git_subtree",
+          "language": "TypeScript",
+          "purpose": "Open-source observability platform",
+          "priority": "high",
+          "notes": "Keep as core observability suite"
+        },
+        {
+          "repo_name": "supabase",
+          "destination_path": "packages/supabase",
+          "migration_method": "npm_dependency",
+          "language": "TypeScript",
+          "purpose": "Backend-as-a-Service (Postgres, Auth, Functions)",
+          "priority": "high",
+          "notes": "Core backend stack - use as dependency"
+        },
+        {
+          "repo_name": "firebase-tools",
+          "destination_path": "packages/firebase-tools",
+          "migration_method": "npm_dependency",
+          "language": "JavaScript",
+          "purpose": "Firebase CLI and tools",
+          "priority": "high",
+          "notes": "Core backend stack - use as dependency"
+        },
+        {
+          "repo_name": "pmm",
+          "destination_path": "apps/pmm",
+          "migration_method": "docker_compose",
+          "language": "Go",
+          "purpose": "Database monitoring",
+          "priority": "low",
+          "notes": "Use via Docker Compose"
+        }
+      ]
+    },
+    "dev_tools_templates": {
+      "category_description": "Development tools, templates, and UI frameworks",
+      "recommended_stack": ["heroui", "vite-template", "next-templates", "zod"],
+      "repositories": [
+        {
+          "repo_name": "heroui",
+          "destination_path": "packages/heroui",
+          "migration_method": "npm_dependency",
+          "language": "TypeScript",
+          "purpose": "Modern React UI framework",
+          "priority": "high",
+          "notes": "Core UI framework - use as dependency"
+        },
+        {
+          "repo_name": "heroui-cli",
+          "destination_path": "packages/heroui-cli",
+          "migration_method": "npm_dependency",
+          "language": "TypeScript",
+          "purpose": "CLI for HeroUI",
+          "priority": "medium",
+          "notes": "Use as dev dependency"
+        },
+        {
+          "repo_name": "vite-template",
+          "destination_path": "apps/templates/vite-flashfusion",
+          "migration_method": "git_subtree",
+          "language": "TypeScript",
+          "purpose": "Vite template for FlashFusion",
+          "priority": "high",
+          "notes": "Core template for new projects"
+        },
+        {
+          "repo_name": "vite-react-heroui-template",
+          "destination_path": "apps/templates/vite-react-heroui",
+          "migration_method": "git_subtree",
+          "language": "TypeScript",
+          "purpose": "Vite + React + HeroUI template",
+          "priority": "high",
+          "notes": "Primary frontend template"
+        },
+        {
+          "repo_name": "next-pages-template",
+          "destination_path": "apps/templates/next-pages",
+          "migration_method": "git_subtree",
+          "language": "TypeScript",
+          "purpose": "Next.js Pages Router template",
+          "priority": "medium",
+          "notes": "Keep for legacy support"
+        },
+        {
+          "repo_name": "next-app-template",
+          "destination_path": "apps/templates/next-app",
+          "migration_method": "git_subtree",
+          "language": "TypeScript",
+          "purpose": "Next.js App Router template",
+          "priority": "high",
+          "notes": "Modern Next.js template"
+        },
+        {
+          "repo_name": "zod",
+          "destination_path": "packages/zod",
+          "migration_method": "npm_dependency",
+          "language": "TypeScript",
+          "purpose": "Schema validation library",
+          "priority": "high",
+          "notes": "Core validation library - use as dependency"
+        },
+        {
+          "repo_name": "redux-toolkit",
+          "destination_path": "packages/redux-toolkit",
+          "migration_method": "npm_dependency",
+          "language": "TypeScript",
+          "purpose": "Redux state management",
+          "priority": "medium",
+          "notes": "Use as dependency when needed"
+        },
+        {
+          "repo_name": "bootstrap",
+          "destination_path": "archive/bootstrap",
+          "migration_method": "archive",
+          "language": "CSS",
+          "purpose": "Legacy UI framework",
+          "priority": "archive",
+          "notes": "Archive - replaced by HeroUI"
+        }
+      ]
+    },
+    "memory_research": {
+      "category_description": "Memory systems, context management, and research tools",
+      "core_stack": ["mem0", "letta", "gpt-researcher"],
+      "repositories": [
+        {
+          "repo_name": "mem0",
+          "destination_path": "packages/mem0",
+          "migration_method": "git_subtree",
+          "language": "Python",
+          "purpose": "Universal memory layer for AI agents",
+          "priority": "high",
+          "notes": "Core memory system"
+        },
+        {
+          "repo_name": "letta",
+          "destination_path": "packages/letta",
+          "migration_method": "git_subtree",
+          "language": "Python",
+          "purpose": "Stateful agents framework",
+          "priority": "high",
+          "notes": "Core agent state management"
+        },
+        {
+          "repo_name": "gpt-researcher",
+          "destination_path": "apps/gpt-researcher",
+          "migration_method": "git_subtree",
+          "language": "Python",
+          "purpose": "Automated research agent",
+          "priority": "high",
+          "notes": "Core research automation tool"
+        },
+        {
+          "repo_name": "awesome-claude-code",
+          "destination_path": "docs/references/awesome-claude-code",
+          "migration_method": "git_subtree",
+          "language": "Markdown",
+          "purpose": "Claude coding resources",
+          "priority": "low",
+          "notes": "Reference-only knowledge repo"
+        },
+        {
+          "repo_name": "awesome-mcp-servers",
+          "destination_path": "docs/references/awesome-mcp-servers",
+          "migration_method": "git_subtree",
+          "language": "Markdown",
+          "purpose": "MCP server resources",
+          "priority": "low",
+          "notes": "Reference-only knowledge repo"
+        }
+      ]
+    },
+    "business_saas": {
+      "category_description": "Business applications and SaaS systems for inspiration",
+      "approach": "pattern_extraction",
+      "repositories": [
+        {
+          "repo_name": "budibase",
+          "destination_path": "docs/patterns/budibase",
+          "migration_method": "pattern_extraction",
+          "language": "TypeScript",
+          "purpose": "No-code business app builder patterns",
+          "priority": "low",
+          "notes": "Extract patterns, don't maintain fork"
+        },
+        {
+          "repo_name": "n8n",
+          "destination_path": "docs/patterns/n8n",
+          "migration_method": "pattern_extraction",
+          "language": "TypeScript",
+          "purpose": "Workflow automation patterns",
+          "priority": "low",
+          "notes": "Extract patterns, don't maintain fork"
+        },
+        {
+          "repo_name": "inventree",
+          "destination_path": "docs/patterns/inventree",
+          "migration_method": "pattern_extraction",
+          "language": "Python",
+          "purpose": "Inventory management patterns",
+          "priority": "low",
+          "notes": "Extract patterns, don't maintain fork"
+        }
+      ]
+    },
+    "utilities": {
+      "category_description": "Miscellaneous utilities and tools",
+      "repositories": [
+        {
+          "repo_name": "pipedream",
+          "destination_path": "packages/pipedream-utils",
+          "migration_method": "git_subtree",
+          "language": "JavaScript",
+          "purpose": "API connection utilities",
+          "priority": "medium",
+          "notes": "Useful for API integrations"
+        },
+        {
+          "repo_name": "yt-dlp",
+          "destination_path": "apps/yt-dlp",
+          "migration_method": "docker_compose",
+          "language": "Python",
+          "purpose": "Video downloader",
+          "priority": "low",
+          "notes": "Use via Docker Compose when needed"
+        },
+        {
+          "repo_name": "sqlfluff",
+          "destination_path": "packages/sqlfluff",
+          "migration_method": "pip_dependency",
+          "language": "Python",
+          "purpose": "SQL linting and formatting",
+          "priority": "medium",
+          "notes": "Use as dev dependency"
+        }
+      ]
+    },
+    "migration_methods": {
+      "git_subtree": {
+        "description": "Full repository integration with history preservation",
+        "use_case": "Core packages and applications that will be actively developed",
+        "command_template": "git subtree add --prefix={destination_path} {repo_url} main --squash"
+      },
+      "npm_dependency": {
+        "description": "Add as NPM dependency in package.json",
+        "use_case": "Well-maintained public packages",
+        "command_template": "npm install {package_name}"
+      },
+      "pip_dependency": {
+        "description": "Add as Python dependency in requirements.txt",
+        "use_case": "Well-maintained Python packages",
+        "command_template": "pip install {package_name}"
+      },
+      "docker_compose": {
+        "description": "Include via Docker Compose configuration",
+        "use_case": "Services and tools that run as containers",
+        "command_template": "Add service definition to docker-compose.yml"
+      },
+      "pattern_extraction": {
+        "description": "Extract useful patterns and document in docs/",
+        "use_case": "Large applications used for inspiration only",
+        "command_template": "Manual analysis and documentation"
+      },
+      "archive": {
+        "description": "Archive for future reference but don't actively maintain",
+        "use_case": "Low-priority or superseded repositories",
+        "command_template": "Move to archive/ directory with README"
+      }
+    },
+    "directory_structure": {
+      "apps/": [
+        "activepieces",
+        "claude-code", 
+        "flashfusion-data-examples",
+        "flashfusion-data-docs",
+        "gpt-researcher",
+        "checkmate",
+        "uptime-kuma", 
+        "oneuptime",
+        "templates/vite-flashfusion",
+        "templates/vite-react-heroui",
+        "templates/next-pages",
+        "templates/next-app",
+        "yt-dlp"
+      ],
+      "packages/": [
+        "flashfusion-data-core",
+        "flashfusion-data-mcp", 
+        "flashfusion-data-scraper",
+        "claude-flow",
+        "agentops",
+        "autogen",
+        "langgraph",
+        "mem0",
+        "letta",
+        "pipedream-utils"
+      ],
+      "docs/": [
+        "references/awesome-claude-code",
+        "references/awesome-mcp-servers", 
+        "patterns/budibase",
+        "patterns/n8n",
+        "patterns/inventree"
+      ]
+    }
+  }
+}
